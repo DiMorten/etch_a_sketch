@@ -25,13 +25,8 @@ function createBoard(gridSize) {
 }
 
 function changeColor(e) {
-    console.log(e.type);
-    console.log(mouseDown);
-    console.log(e);
-    // if (e.type === 'mouseover' && !mouseDown) return    
-    if (e.type === 'mouseover' && !mouseDown) return    
     
-    // e.target.backgroundColor = 'black';
+    if (e.type === 'mouseover' && !mouseDown) return    
         this.classList.add("box-mouseover");    
 }
 
