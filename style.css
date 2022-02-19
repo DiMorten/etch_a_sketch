@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 640px;
     height: 640px;
+    border: 2px solid black;
 }
 
 .row {
@@ -13,7 +14,6 @@
 
 .box {
     display: flex;
-    border: 1px solid black;
     flex: 1;
 }
 

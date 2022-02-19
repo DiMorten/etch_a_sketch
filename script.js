@@ -1,8 +1,11 @@
 
-
+const container = document.querySelector('#container');
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
 
 function createBoard(gridSize) {
-    const container = document.querySelector('#container');
+    
     for (i=0; i<gridSize; i++) {
         const rowDiv = document.createElement('div');
         rowDiv.setAttribute('class', 'row');
@@ -12,17 +15,24 @@ function createBoard(gridSize) {
             boxDiv.setAttribute('class', 'box');
             boxDiv.setAttribute('id', 'box_' + j.toString() + '_' + i.toString());
             
+            boxDiv.addEventListener('mouseover', changeColor)
+            boxDiv.addEventListener('mousedown', changeColor)
+
             rowDiv.appendChild(boxDiv);        
         }
     }
 
-    const boxes = document.querySelectorAll('.box');
-
-    boxes.forEach(box => box.addEventListener('mouseover', boxMouseoverCallback));
 }
 
-function boxMouseoverCallback(e) {    
-    this.classList.add("box-mouseover");    
+function changeColor(e) {
+    console.log(e.type);
+    console.log(mouseDown);
+    console.log(e);
+    // if (e.type === 'mouseover' && !mouseDown) return    
+    if (e.type === 'mouseover' && !mouseDown) return    
+    
+    // e.target.backgroundColor = 'black';
+        this.classList.add("box-mouseover");    
 }
 
 function clearBoard() {
@@ -31,7 +41,6 @@ function clearBoard() {
 }
 
 function deleteBoard() {
-    const container = document.querySelector('#container');
     while (container.firstChild) 
         container.removeChild(container.lastChild);
 }
@@ -58,3 +67,4 @@ createBoard(16);
 
 const button = document.querySelector('button');
 button.addEventListener('click', resetCallback);
+
