@@ -23,3 +23,25 @@
 .box-mouseout {
     background-color: black;
 }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#columndiv {
+    display: flex;
+    flex-direction: column;
+}
+button {
+    font-family: Roboto-Bold;
+    width:220px;
+    height:40px;
+    background-color: #3882f6;
+    color: #f9faf8;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0 1%;
+    margin: 20px auto;
+}

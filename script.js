@@ -20,13 +20,9 @@ function boxMouseoverCallback(e) {
     this.classList.add("box-mouseover");    
 }
 
-function boxMouseoutCallback(e) {    
-    this.classList.remove("box-mouseover");    
-}
 createGrid();
 
 const boxes = document.querySelectorAll('.box');
 
 boxes.forEach(box => box.addEventListener('mouseover', boxMouseoverCallback));
-boxes.forEach(box => box.addEventListener('mouseout', boxMouseoutCallback));
 
